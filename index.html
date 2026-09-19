@@ -1,1 +1,226 @@
-PLACEHOLDER_WILL_REPLACE
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/>
+<meta name="theme-color" content="#0b0f14"/>
+<meta name="description" content="Stealth Construction — NTCC & Sugar Land Pickleball full transformation, Feb–Aug 2026"/>
+<title>Stealth Construction — NTCC &amp; Sugar Land Pickleball Transformation</title>
+<style>
+:root{--bg:#0b0f14;--card:#161d27;--text:#f2f5f8;--muted:#9aa7b5;--accent:#c9a227;--border:rgba(255,255,255,.08)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;background:radial-gradient(1200px 600px at 10% -10%,#1a2740,transparent 55%),radial-gradient(900px 500px at 100% 0%,#2a2210,transparent 50%),var(--bg);color:var(--text);line-height:1.45}
+.wrap{max-width:1100px;margin:0 auto;padding:16px 14px 48px}
+header{display:flex;flex-wrap:wrap;gap:12px 20px;align-items:flex-end;justify-content:space-between;margin-bottom:14px}
+.eyebrow{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);font-weight:700}
+h1{font-size:clamp(1.25rem,3.5vw,1.85rem);font-weight:700;letter-spacing:-.02em;margin-top:4px}
+.sub{color:var(--muted);font-size:.9rem;max-width:48ch;margin-top:6px}
+.stats{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 0}
+.stat{background:var(--card);border:1px solid var(--border);border-radius:999px;padding:5px 11px;font-size:.75rem;color:var(--muted)}
+.stat b{color:var(--text)}
+.controls,.tabs,.chapters{display:flex;flex-wrap:wrap;gap:8px}
+.tabs,.chapters{overflow-x:auto;-webkit-overflow-scrolling:touch;margin-bottom:10px;gap:6px;padding-bottom:2px}
+.chapters{margin-bottom:8px}
+.btn{appearance:none;border:1px solid var(--border);background:var(--card);color:var(--text);border-radius:999px;padding:8px 14px;font-size:.82rem;font-weight:600;cursor:pointer;white-space:nowrap}
+.btn.active{background:linear-gradient(135deg,#c9a227,#a88416);color:#111;border-color:transparent}
+.btn.ghost{background:transparent}
+.btn.sm{padding:6px 11px;font-size:.75rem}
+.stage{position:relative;background:#000;border-radius:16px;overflow:hidden;box-shadow:0 20px 50px rgba(0,0,0,.45);border:1px solid var(--border);aspect-ratio:16/10;min-height:240px;touch-action:pan-y}
+.stage.fullscreen{position:fixed;inset:0;z-index:100;border-radius:0;aspect-ratio:auto;min-height:100dvh;height:100dvh;width:100vw}
+.slide{position:absolute;inset:0;opacity:0;pointer-events:none;transition:opacity .35s;display:flex;align-items:center;justify-content:center;background:#000}
+.slide.on{opacity:1;pointer-events:auto}
+.slide img,.slide video{width:100%;height:100%;object-fit:contain;user-select:none;max-height:100%}
+.slide video{background:#000}
+.badge{position:absolute;top:12px;left:12px;z-index:5;background:rgba(0,0,0,.62);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.12);padding:6px 10px;border-radius:999px;font-size:.72rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase}
+.badge.before{color:#ffb4a2}.badge.after{color:#9dffc8}.badge.mid{color:#9ecbff}
+.caption{position:absolute;left:0;right:0;bottom:0;z-index:5;padding:28px 16px 14px;background:linear-gradient(transparent,rgba(0,0,0,.78));font-size:.9rem;pointer-events:none}
+.caption strong{display:block;font-size:1rem;margin-bottom:2px}.caption span{color:#c9d3de;font-size:.82rem}
+.nav-btn{position:absolute;top:50%;transform:translateY(-50%);z-index:6;width:44px;height:44px;border-radius:50%;border:1px solid rgba(255,255,255,.18);background:rgba(0,0,0,.45);color:#fff;font-size:1.4rem;cursor:pointer;display:grid;place-items:center}
+.nav-btn.prev{left:10px}.nav-btn.next{right:10px}
+.dots{display:flex;gap:6px;justify-content:center;flex-wrap:wrap;margin:12px 0 4px;max-height:48px;overflow:hidden}
+.dot{width:7px;height:7px;border-radius:50%;border:none;background:rgba(255,255,255,.22);cursor:pointer;padding:0}.dot.on{background:var(--accent);transform:scale(1.25)}
+.meta-row{display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between;color:var(--muted);font-size:.8rem;margin-top:8px}
+.compare{margin-top:28px;display:grid;gap:14px}.compare h2,.videos-sec h2,.timeline h2{font-size:1.05rem;margin-bottom:4px}
+.compare p,.videos-sec p,.timeline p{color:var(--muted);font-size:.85rem;margin-bottom:12px}
+.compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+@media(max-width:700px){.compare-grid{grid-template-columns:1fr}.stage{aspect-ratio:4/3}.nav-btn{width:38px;height:38px}}
+.pair{position:relative;border-radius:14px;overflow:hidden;border:1px solid var(--border);background:#000;aspect-ratio:16/10}
+.pair img{width:100%;height:100%;object-fit:cover}
+.pair .tag{position:absolute;top:10px;left:10px;background:rgba(0,0,0,.65);padding:4px 9px;border-radius:999px;font-size:.7rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase}
+.pair .tag.after{color:#9dffc8}.pair .tag.before{color:#ffb4a2}.pair .tag.mid{color:#9ecbff}
+.pair .label{position:absolute;bottom:0;left:0;right:0;padding:18px 12px 10px;background:linear-gradient(transparent,rgba(0,0,0,.75));font-size:.8rem;color:#d7dee6}
+.videos-sec{margin-top:32px}
+.vgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px}
+.vcard{background:var(--card);border:1px solid var(--border);border-radius:14px;overflow:hidden}
+.vcard video{width:100%;aspect-ratio:16/9;object-fit:cover;background:#000;display:block}
+.vcard .vmeta{padding:10px 12px}.vcard .vmeta strong{display:block;font-size:.88rem}.vcard .vmeta span{color:var(--muted);font-size:.78rem}
+.timeline{margin-top:32px}
+.tline{display:flex;gap:8px;overflow-x:auto;padding-bottom:8px}
+.tchip{flex:0 0 auto;background:var(--card);border:1px solid var(--border);border-radius:12px;padding:10px 14px;cursor:pointer;min-width:110px}
+.tchip:hover,.tchip.on{border-color:var(--accent)}
+.tchip .d{font-size:.72rem;color:var(--accent);font-weight:700;letter-spacing:.06em;text-transform:uppercase}
+.tchip .n{font-size:.85rem;font-weight:600;margin-top:2px}
+footer{margin-top:36px;padding-top:18px;border-top:1px solid var(--border);color:var(--muted);font-size:.8rem;display:flex;flex-wrap:wrap;gap:8px 16px;justify-content:space-between}
+</style></head><body>
+<div class="wrap">
+<header>
+<div>
+<div class="eyebrow">Stealth Construction · Client Pitch</div>
+<h1>NTCC &amp; Sugar Land Pickleball — Full Transformation</h1>
+<p class="sub">Feb → Aug 2026: early construction through pickleball courts, signage, and NTCC reveal. Built to win the client meeting.</p>
+<div class="stats">
+<span class="stat"><b>15</b> before</span>
+<span class="stat"><b>20</b> progress</span>
+<span class="stat"><b>14</b> after PB</span>
+<span class="stat"><b>10</b> after NTCC</span>
+<span class="stat"><b>3</b> videos</span>
+<span class="stat"><b>62</b> total</span>
+</div>
+</div>
+<div class="controls">
+<button class="btn ghost" id="autoBtn" type="button" aria-pressed="true">Auto ▶</button>
+<button class="btn ghost" id="fsBtn" type="button">Fullscreen</button>
+</div>
+</header>
+
+<nav class="chapters" aria-label="Timeline chapters">
+<button class="btn sm active" data-filter="overview" type="button">Full story</button>
+<button class="btn sm" data-filter="before" type="button">Before</button>
+<button class="btn sm" data-filter="progress" type="button">Progress</button>
+<button class="btn sm" data-filter="after-pickleball" type="button">After Pickleball</button>
+<button class="btn sm" data-filter="after-ntcc" type="button">After NTCC</button>
+<button class="btn sm" data-filter="videos" type="button">Videos</button>
+</nav>
+
+<section class="timeline">
+<h2>Timeline</h2>
+<p>Jump by chapter — early works → mid build → finished courts &amp; NTCC.</p>
+<div class="tline" id="tline"></div>
+</section>
+
+<div class="stage" id="stage" style="margin-top:14px">
+<div class="badge" id="badge">Before</div>
+<button class="nav-btn prev" id="prevBtn" aria-label="Previous">‹</button>
+<button class="nav-btn next" id="nextBtn" aria-label="Next">›</button>
+<div class="caption" id="caption"><strong></strong><span></span></div>
+</div>
+<div class="dots" id="dots"></div>
+<div class="meta-row"><span id="counter">1 / 1</span><span>Swipe · ←/→ · Space pause · F fullscreen</span></div>
+
+<section class="compare">
+<h2>Side-by-side before / after</h2>
+<p>Same site, months apart — the transformation story at a glance.</p>
+<div class="compare-grid" id="compareGrid"></div>
+</section>
+
+<section class="videos-sec">
+<h2>Videos</h2>
+<p>Short clips with controls — tap play. Best on mobile with sound on.</p>
+<div class="vgrid" id="vgrid"></div>
+</section>
+
+<footer>
+<span>Stealth Construction · NTCC &amp; Sugar Land Pickleball · Drive progress media</span>
+<span>Client transformation deck</span>
+</footer>
+</div>
+<script>
+const SLIDES=[{"src": "images/before/before-feb10-d.jpg", "cat": "before", "badge": "Before", "badgeClass": "before", "title": "Aerial \u2014 construction start", "sub": "Feb 10, 2026", "type": "image"}, {"src": "images/before/before-feb10-a.jpg", "cat": "before", "badge": "Before", "badgeClass": "before", "title": "Aerial \u2014 dawn of site", "sub": "Feb 10, 2026", "type": "image"}, {"src": "images/before/before-feb10-b.jpg", "cat": "before", "badge": "Before", "badgeClass": "before", "title": "Aerial \u2014 early footprint", "sub": "Feb 10, 2026", "type": "image"}, {"src": "images/before/before-feb10-c.jpg", "cat": "before", "badge": "Before", "badgeClass": "before", "title": "Aerial \u2014 wide site", "sub": "Feb 10, 2026", "type": "image"}, {"src": "images/before/before-feb10-e.jpg", "cat": "before", "badge": "Before", "badgeClass": "before", "title": "Ground \u2014 early works", "sub": "Feb 10, 2026", "type": "image"}, {"src": "images/before/before-feb10-f.jpg", "cat": "before", "badge": "Before", "badgeClass": "before", "title": "Ground \u2014 foundation phase", "sub": "Feb 10, 2026", "type": "image"}, {"src": "images/before/before-feb23-a.jpg", "cat": "before", "badge": "Before", "badgeClass": "before", "title": "Aerial \u2014 late February", "sub": "Feb 23, 2026", "type": "image"}, {"src": "images/before/before-feb23-c.jpg", "cat": "before", "badge": "Before", "badgeClass": "before", "title": "Aerial \u2014 progress angle", "sub": "Feb 23, 2026", "type": "image"}, {"src": "images/before/before-feb23-d.jpg", "cat": "before", "badge": "Before", "badgeClass": "before", "title": "Aerial \u2014 site from NW", "sub": "Feb 23, 2026", "type": "image"}, {"src": "images/before/before-feb23-e.jpg", "cat": "before", "badge": "Before", "badgeClass": "before", "title": "Aerial \u2014 site from SE", "sub": "Feb 23, 2026", "type": "image"}, {"src": "images/before/before-feb23-b.jpg", "cat": "before", "badge": "Before", "badgeClass": "before", "title": "Aerial \u2014 structure rising", "sub": "Feb 23, 2026", "type": "image"}, {"src": "images/before/before-mar2-a.jpg", "cat": "before", "badge": "Before", "badgeClass": "before", "title": "Aerial \u2014 March overview", "sub": "Mar 2, 2026", "type": "image"}, {"src": "images/before/before-mar2-c.jpg", "cat": "before", "badge": "Before", "badgeClass": "before", "title": "Aerial \u2014 building shell", "sub": "Mar 2, 2026", "type": "image"}, {"src": "images/before/before-mar2-d.jpg", "cat": "before", "badge": "Before", "badgeClass": "before", "title": "Aerial \u2014 detail pass", "sub": "Mar 2, 2026", "type": "image"}, {"src": "images/before/before-mar2-b.jpg", "cat": "before", "badge": "Before", "badgeClass": "before", "title": "Aerial \u2014 framing advance", "sub": "Mar 2, 2026", "type": "image"}, {"src": "images/progress/prog-apr11-a.jpg", "cat": "progress", "badge": "Progress", "badgeClass": "mid", "title": "Aerial \u2014 April progress", "sub": "Apr 11, 2026", "type": "image"}, {"src": "images/progress/prog-apr11-e.jpg", "cat": "progress", "badge": "Progress", "badgeClass": "mid", "title": "Aerial \u2014 another angle", "sub": "Apr 11, 2026", "type": "image"}, {"src": "images/progress/prog-apr11-b.jpg", "cat": "progress", "badge": "Progress", "badgeClass": "mid", "title": "Aerial \u2014 mid spring", "sub": "Apr 11, 2026", "type": "image"}, {"src": "images/progress/prog-apr11-d.jpg", "cat": "progress", "badge": "Progress", "badgeClass": "mid", "title": "Aerial \u2014 site context", "sub": "Apr 11, 2026", "type": "image"}, {"src": "images/progress/prog-apr11-c.jpg", "cat": "progress", "badge": "Progress", "badgeClass": "mid", "title": "Aerial \u2014 structure detail", "sub": "Apr 11, 2026", "type": "image"}, {"src": "images/progress/prog-may21-b.jpg", "cat": "progress", "badge": "Progress", "badgeClass": "mid", "title": "Aerial \u2014 court area forming", "sub": "May 21, 2026", "type": "image"}, {"src": "images/progress/prog-may21-e.jpg", "cat": "progress", "badge": "Progress", "badgeClass": "mid", "title": "Aerial \u2014 courts + building", "sub": "May 21, 2026", "type": "image"}, {"src": "images/progress/prog-may21-f.jpg", "cat": "progress", "badge": "Progress", "badgeClass": "mid", "title": "Aerial \u2014 finishing prep", "sub": "May 21, 2026", "type": "image"}, {"src": "images/progress/prog-may21-c.jpg", "cat": "progress", "badge": "Progress", "badgeClass": "mid", "title": "Aerial \u2014 mid transformation", "sub": "May 21, 2026", "type": "image"}, {"src": "images/progress/prog-may21-a.jpg", "cat": "progress", "badge": "Progress", "badgeClass": "mid", "title": "Aerial \u2014 pickleball prep", "sub": "May 21, 2026", "type": "image"}, {"src": "images/progress/prog-may21-d.jpg", "cat": "progress", "badge": "Progress", "badgeClass": "mid", "title": "Aerial \u2014 site wide", "sub": "May 21, 2026", "type": "image"}, {"src": "images/progress/prog-may21-g.jpg", "cat": "progress", "badge": "Progress", "badgeClass": "mid", "title": "Resurfacing detail", "sub": "May 21, 2026", "type": "image"}, {"src": "images/progress/prog-jun17-a.jpg", "cat": "progress", "badge": "Progress", "badgeClass": "mid", "title": "Ground \u2014 June progress", "sub": "Jun 17, 2026", "type": "image"}, {"src": "images/progress/prog-jun17-d.jpg", "cat": "progress", "badge": "Progress", "badgeClass": "mid", "title": "Ground \u2014 exterior works", "sub": "Jun 17, 2026", "type": "image"}, {"src": "images/progress/prog-jun17-e.jpg", "cat": "progress", "badge": "Progress", "badgeClass": "mid", "title": "Ground \u2014 finish push", "sub": "Jun 17, 2026", "type": "image"}, {"src": "images/progress/prog-jun17-b.jpg", "cat": "progress", "badge": "Progress", "badgeClass": "mid", "title": "Ground \u2014 mid build", "sub": "Jun 17, 2026", "type": "image"}, {"src": "images/progress/prog-jun17-c.jpg", "cat": "progress", "badge": "Progress", "badgeClass": "mid", "title": "Ground \u2014 site walk", "sub": "Jun 17, 2026", "type": "image"}, {"src": "images/progress/prog-jul12-c.jpg", "cat": "progress", "badge": "Progress", "badgeClass": "mid", "title": "Ground \u2014 July detail", "sub": "Jul 12, 2026", "type": "image"}, {"src": "images/progress/prog-jul12-a.jpg", "cat": "progress", "badge": "Progress", "badgeClass": "mid", "title": "Ground \u2014 late progress", "sub": "Jul 12, 2026", "type": "image"}, {"src": "images/progress/prog-jul12-b.jpg", "cat": "progress", "badge": "Progress", "badgeClass": "mid", "title": "Ground \u2014 near complete", "sub": "Jul 12, 2026", "type": "image"}, {"src": "images/after-pickleball/after-pb-sign-a.jpg", "cat": "after-pickleball", "badge": "After \u00b7 PB", "badgeClass": "after", "title": "PB sign \u2014 install day", "sub": "Jul 26, 2026", "type": "image"}, {"src": "images/after-pickleball/after-pb-sign-d.jpg", "cat": "after-pickleball", "badge": "After \u00b7 PB", "badgeClass": "after", "title": "PB sign \u2014 close-up", "sub": "Jul 27, 2026", "type": "image"}, {"src": "images/after-pickleball/after-pb-sign-c.jpg", "cat": "after-pickleball", "badge": "After \u00b7 PB", "badgeClass": "after", "title": "PB sign \u2014 installed", "sub": "Jul 27, 2026", "type": "image"}, {"src": "images/after-pickleball/after-pb-sign-b.jpg", "cat": "after-pickleball", "badge": "After \u00b7 PB", "badgeClass": "after", "title": "PB sign \u2014 mounting", "sub": "Jul 27, 2026", "type": "image"}, {"src": "images/after-pickleball/after-pb-c.jpg", "cat": "after-pickleball", "badge": "After \u00b7 PB", "badgeClass": "after", "title": "Aerial \u2014 PB complex", "sub": "Jul 28, 2026", "type": "image"}, {"src": "images/after-pickleball/after-pb-d.jpg", "cat": "after-pickleball", "badge": "After \u00b7 PB", "badgeClass": "after", "title": "Aerial \u2014 courts + signage", "sub": "Jul 28, 2026", "type": "image"}, {"src": "images/after-pickleball/after-pb-b.jpg", "cat": "after-pickleball", "badge": "After \u00b7 PB", "badgeClass": "after", "title": "Aerial \u2014 courts overview", "sub": "Jul 28, 2026", "type": "image"}, {"src": "images/after-pickleball/after-pb-a.jpg", "cat": "after-pickleball", "badge": "After \u00b7 PB", "badgeClass": "after", "title": "Aerial \u2014 finished courts", "sub": "Jul 28, 2026", "type": "image"}, {"src": "images/after-pickleball/after-pb-e.jpg", "cat": "after-pickleball", "badge": "After \u00b7 PB", "badgeClass": "after", "title": "Aerial \u2014 full site after", "sub": "Jul 28, 2026", "type": "image"}, {"src": "images/after-pickleball/after-pb-ground-b.jpg", "cat": "after-pickleball", "badge": "After \u00b7 PB", "badgeClass": "after", "title": "Ground \u2014 court surface", "sub": "Jul 28, 2026", "type": "image"}, {"src": "images/after-pickleball/after-pb-ground-a.jpg", "cat": "after-pickleball", "badge": "After \u00b7 PB", "badgeClass": "after", "title": "Ground \u2014 courts ready", "sub": "Jul 28, 2026", "type": "image"}, {"src": "images/after-pickleball/after-pb-h.jpg", "cat": "after-pickleball", "badge": "After \u00b7 PB", "badgeClass": "after", "title": "Aerial \u2014 completed look", "sub": "Jul 29, 2026", "type": "image"}, {"src": "images/after-pickleball/after-pb-g.jpg", "cat": "after-pickleball", "badge": "After \u00b7 PB", "badgeClass": "after", "title": "Aerial \u2014 courts detail", "sub": "Jul 29, 2026", "type": "image"}, {"src": "images/after-pickleball/after-pb-f.jpg", "cat": "after-pickleball", "badge": "After \u00b7 PB", "badgeClass": "after", "title": "Aerial \u2014 follow-up pass", "sub": "Jul 29, 2026", "type": "image"}, {"src": "images/after-ntcc/after-ntcc-a.jpg", "cat": "after-ntcc", "badge": "After \u00b7 NTCC", "badgeClass": "after", "title": "NTCC Reveal \u2014 arrival", "sub": "Aug 13, 2026", "type": "image"}, {"src": "images/after-ntcc/after-ntcc-e.jpg", "cat": "after-ntcc", "badge": "After \u00b7 NTCC", "badgeClass": "after", "title": "NTCC \u2014 another angle", "sub": "Aug 13, 2026", "type": "image"}, {"src": "images/after-ntcc/after-ntcc-d.jpg", "cat": "after-ntcc", "badge": "After \u00b7 NTCC", "badgeClass": "after", "title": "NTCC \u2014 completed exterior", "sub": "Aug 13, 2026", "type": "image"}, {"src": "images/after-ntcc/after-ntcc-f.jpg", "cat": "after-ntcc", "badge": "After \u00b7 NTCC", "badgeClass": "after", "title": "NTCC \u2014 entrance", "sub": "Aug 13, 2026", "type": "image"}, {"src": "images/after-ntcc/after-ntcc-c.jpg", "cat": "after-ntcc", "badge": "After \u00b7 NTCC", "badgeClass": "after", "title": "NTCC \u2014 exterior walk", "sub": "Aug 13, 2026", "type": "image"}, {"src": "images/after-ntcc/after-ntcc-b.jpg", "cat": "after-ntcc", "badge": "After \u00b7 NTCC", "badgeClass": "after", "title": "NTCC \u2014 facade", "sub": "Aug 13, 2026", "type": "image"}, {"src": "images/after-ntcc/after-ntcc-i.jpg", "cat": "after-ntcc", "badge": "After \u00b7 NTCC", "badgeClass": "after", "title": "NTCC \u2014 final look", "sub": "Aug 13, 2026", "type": "image"}, {"src": "images/after-ntcc/after-ntcc-g.jpg", "cat": "after-ntcc", "badge": "After \u00b7 NTCC", "badgeClass": "after", "title": "NTCC \u2014 finished details", "sub": "Aug 13, 2026", "type": "image"}, {"src": "images/after-ntcc/after-ntcc-j.jpg", "cat": "after-ntcc", "badge": "After \u00b7 NTCC", "badgeClass": "after", "title": "NTCC \u2014 reveal highlight", "sub": "Aug 13, 2026", "type": "image"}, {"src": "images/after-ntcc/after-ntcc-h.jpg", "cat": "after-ntcc", "badge": "After \u00b7 NTCC", "badgeClass": "after", "title": "NTCC \u2014 reveal walkthrough", "sub": "Aug 13, 2026", "type": "image"}, {"src": "images/videos/early-ground-feb10.mp4", "cat": "videos", "badge": "Video \u00b7 Before", "badgeClass": "before", "title": "Early site clip", "sub": "Feb 10, 2026 \u00b7 short aerial/ground", "type": "video"}, {"src": "images/videos/pb-sign-07.mp4", "cat": "videos", "badge": "Video \u00b7 PB", "badgeClass": "after", "title": "PB sign install \u2014 7", "sub": "Jul 29, 2026 \u00b7 ~22s", "type": "video"}, {"src": "images/videos/ntcc-reveal-aug13.mp4", "cat": "videos", "badge": "Video \u00b7 NTCC", "badgeClass": "after", "title": "NTCC Reveal walkthrough", "sub": "Aug 13, 2026", "type": "video"}];
+const COMPARES=[["images/before/before-feb10-a.jpg", "Before · Feb 10", "images/after-pickleball/after-pb-a.jpg", "After · Pickleball Jul 28"], ["images/before/before-mar2-c.jpg", "Before · Mar 2", "images/after-ntcc/after-ntcc-d.jpg", "After · NTCC Aug 13"], ["images/progress/prog-may21-c.jpg", "Progress · May 21", "images/after-pickleball/after-pb-e.jpg", "After · Courts Jul 28"], ["images/before/before-feb23-c.jpg", "Before · Feb 23", "images/after-pickleball/after-pb-sign-c.jpg", "After · PB Sign Jul 27"]];
+const stage=document.getElementById('stage'),badgeEl=document.getElementById('badge'),captionEl=document.getElementById('caption'),dotsEl=document.getElementById('dots'),counterEl=document.getElementById('counter'),autoBtn=document.getElementById('autoBtn'),fsBtn=document.getElementById('fsBtn');
+let filter='overview',idx=0,auto=true,timer=null;const INTERVAL=4500;
+const filtered=()=>filter==='overview'?SLIDES.filter(s=>s.type!=='video'):SLIDES.filter(s=>s.cat===filter);
+function pauseVids(){stage.querySelectorAll('video').forEach(v=>{try{v.pause()}catch(e){}})}
+function renderSlides(){
+  pauseVids();
+  stage.querySelectorAll('.slide').forEach(n=>n.remove());
+  const list=filtered();
+  list.forEach((s,i)=>{
+    const d=document.createElement('div');
+    d.className='slide'+(i===idx?' on':'');
+    if(s.type==='video'){
+      const v=document.createElement('video');
+      v.src=s.src;v.controls=true;v.playsInline=true;v.setAttribute('playsinline','');v.preload='metadata';
+      v.addEventListener('play',()=>{auto=false;autoBtn.textContent='Paused ⏸';clearInterval(timer)});
+      d.appendChild(v);
+    }else{
+      const img=document.createElement('img');
+      img.loading=i<2?'eager':'lazy';img.decoding='async';img.alt=s.title;img.src=s.src;
+      d.appendChild(img);
+    }
+    stage.insertBefore(d,badgeEl);
+  });
+  dotsEl.innerHTML='';
+  const maxDots=Math.min(list.length,48);
+  for(let i=0;i<maxDots;i++){
+    const b=document.createElement('button');b.className='dot'+(i===idx?' on':'');b.type='button';
+    b.onclick=()=>{idx=i;show();restart()};dotsEl.appendChild(b);
+  }
+}
+function show(){
+  const list=filtered();if(!list.length)return;
+  if(idx>=list.length)idx=0;if(idx<0)idx=list.length-1;
+  pauseVids();
+  stage.querySelectorAll('.slide').forEach((el,i)=>el.classList.toggle('on',i===idx));
+  dotsEl.querySelectorAll('.dot').forEach((el,i)=>el.classList.toggle('on',i===idx));
+  const s=list[idx];
+  badgeEl.textContent=s.badge;badgeEl.className='badge '+s.badgeClass;
+  captionEl.innerHTML='<strong>'+s.title+'</strong><span>'+s.sub+'</span>';
+  counterEl.textContent=(idx+1)+' / '+list.length;
+}
+function next(dir){idx+=dir;const list=filtered();if(idx>=list.length)idx=0;if(idx<0)idx=list.length-1;show()}
+function restart(){clearInterval(timer);if(auto)timer=setInterval(()=>{const list=filtered();const s=list[idx];if(s&&s.type==='video')return;next(1)},INTERVAL)}
+document.querySelectorAll('.chapters .btn').forEach(btn=>btn.onclick=()=>{
+  document.querySelectorAll('.chapters .btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');filter=btn.dataset.filter;idx=0;renderSlides();show();restart();
+  document.querySelectorAll('.tchip').forEach(c=>c.classList.toggle('on',c.dataset.filter===filter));
+});
+document.getElementById('prevBtn').onclick=()=>{next(-1);restart()};
+document.getElementById('nextBtn').onclick=()=>{next(1);restart()};
+autoBtn.onclick=()=>{auto=!auto;autoBtn.textContent=auto?'Auto ▶':'Paused ⏸';autoBtn.setAttribute('aria-pressed',auto?'true':'false');restart()};
+fsBtn.onclick=()=>{if(!document.fullscreenElement)stage.requestFullscreen?.()||stage.webkitRequestFullscreen?.();else document.exitFullscreen?.()};
+document.onfullscreenchange=()=>stage.classList.toggle('fullscreen',!!document.fullscreenElement);
+document.onkeydown=e=>{
+  if(e.key==='ArrowRight'){next(1);restart()}
+  else if(e.key==='ArrowLeft'){next(-1);restart()}
+  else if(e.key===' '||e.code==='Space'){if(e.target.tagName==='VIDEO')return;e.preventDefault();autoBtn.click()}
+  else if(e.key==='f'||e.key==='F')fsBtn.click();
+};
+let tx=0,ty=0;
+stage.ontouchstart=e=>{tx=e.changedTouches[0].clientX;ty=e.changedTouches[0].clientY};
+stage.ontouchend=e=>{
+  const dx=e.changedTouches[0].clientX-tx,dy=e.changedTouches[0].clientY-ty;
+  if(Math.abs(dx)<40||Math.abs(dx)<Math.abs(dy))return;
+  if(dx<0)next(1);else next(-1);restart();
+};
+// timeline chips
+const tline=document.getElementById('tline');
+[
+  ['overview','Full','All stills'],
+  ['before','Feb–Mar','Before'],
+  ['progress','Apr–Jul','Progress'],
+  ['after-pickleball','Jul','After PB'],
+  ['after-ntcc','Aug 13','After NTCC'],
+  ['videos','Clips','Videos']
+].forEach(([f,d,n])=>{
+  const c=document.createElement('button');c.type='button';c.className='tchip'+(f==='overview'?' on':'');c.dataset.filter=f;
+  c.innerHTML='<div class="d">'+d+'</div><div class="n">'+n+'</div>';
+  c.onclick=()=>{document.querySelector('.chapters .btn[data-filter="'+f+'"]')?.click()};
+  tline.appendChild(c);
+});
+// compare
+const cg=document.getElementById('compareGrid');
+COMPARES.forEach(([a,al,b,bl])=>{
+  [[a,al,'before'],[b,bl,bl.includes('Progress')?'mid':'after']].forEach(([src,lab,cls])=>{
+    const p=document.createElement('div');p.className='pair';
+    p.innerHTML='<img src="'+src+'" alt="'+lab+'" loading="lazy"/><div class="tag '+cls+'">'+(cls==='before'?'Before':cls==='mid'?'Progress':'After')+'</div><div class="label">'+lab+'</div>';
+    cg.appendChild(p);
+  });
+});
+// video cards
+const vg=document.getElementById('vgrid');
+SLIDES.filter(s=>s.type==='video').forEach(s=>{
+  const c=document.createElement('div');c.className='vcard';
+  c.innerHTML='<video src="'+s.src+'" controls playsinline preload="metadata"></video><div class="vmeta"><strong>'+s.title+'</strong><span>'+s.sub+'</span></div>';
+  vg.appendChild(c);
+});
+renderSlides();show();restart();
+</script></body></html>
